@@ -77,7 +77,7 @@ class RequestController extends Controller
                 </p>
                 <h4><strong>' . $reference_key . '</strong></h4>
                 <p>
-                    Track your request <a href="http://127.0.0.1:8000/track" class="text-decoration-none">here</a> or go to your user resident accout.
+                    Track your request <a href="https://projects.apc.edu.ph/barangay/track" class="text-decoration-none">here</a> or go to your user resident accout.
                 </p>
                 <br>
                 <h5 style="font-style: italic; color: gray;">This is a system generated message. Please DO NOT REPLY to this email.</h5>
@@ -204,7 +204,7 @@ class RequestController extends Controller
                 </p>
                 <h4><strong>' . $reference_key . '</strong></h4>
                 <p>
-                    Track your request <a href="http://127.0.0.1:8000/track" class="text-decoration-none">here</a> or go to your user resident accout.
+                    Track your request <a href="https://projects.apc.edu.ph/barangay/track" class="text-decoration-none">here</a> or go to your user resident accout.
                 </p>
                 <br>
                 <h5 style="font-style: italic; color: gray;">This is a system generated message. Please DO NOT REPLY to this email.</h5>
