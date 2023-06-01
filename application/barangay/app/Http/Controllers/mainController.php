@@ -208,7 +208,7 @@ class mainController extends Controller
                     <h2>Verify Your Resident Account</h2>
                     <p>Dear ' . strtoupper($request->firstName) . " " . strtoupper($request->middleName) . " " . strtoupper($request->lastName) . ',</p>
                     <p>Thank you for creating your resident account. In order to complete the registration process and start using our services, please click on the link below to verify your account:</p>
-                    <p><a href="http://127.0.0.1:8000/verifyEmail?email=' . strtolower($request->email) . '&key=' . $request->otp . '" class="btn btn-primary">Verify Account</a></p>
+                    <p><a href="https://projects.apc.edu.ph/barangay/verifyEmail?email=' . strtolower($request->email) . '&key=' . $request->otp . '" class="btn btn-primary">Verify Account</a></p>
                     <p>If you did not create an account with us, please disregard this email.</p>
                     <p>Thank you,</p>
                     <p>BARANGAY SOUTH SIGNAL VILLAGE</p>

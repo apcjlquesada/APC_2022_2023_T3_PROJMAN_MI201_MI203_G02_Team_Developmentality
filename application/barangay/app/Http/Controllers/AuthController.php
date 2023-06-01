@@ -178,7 +178,7 @@ class AuthController extends Controller
                     <h2>Verify to reset your password</h2>
                     <p>Dear ' . strtoupper($user->first_name) . " " . strtoupper($user->middle_name) . " " . strtoupper($user->last_name) . ',</p>
                     <p>You recently requested to reset your password for your account on Barangay South Signal Village Web App. To complete the process, please click the link below:</p>
-                    <p><a href="http://127.0.0.1:8000/forgetpassword_enter_page?email=' . strtolower($request->email) . '&key=' . $user->password . '&token=' . $request->_token . '" class="btn btn-primary">Reset Password</a></p>
+                    <p><a href="https://projects.apc.edu.ph/barangay/forgetpassword_enter_page?email=' . strtolower($request->email) . '&key=' . $user->password . '&token=' . $request->_token . '" class="btn btn-primary">Reset Password</a></p>
                     <p>If you did not request a password reset, please ignore this email.</p>
                     <p>If you need assistance resetting your password, please contact our support team.</p>
                     <p>Thank you,</p>
