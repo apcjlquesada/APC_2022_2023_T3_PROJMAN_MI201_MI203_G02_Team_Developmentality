@@ -542,7 +542,17 @@
                     },
                     error: function(error) {
                         // Hide the modal
-                        alert('wrong password');
+                        Swal.fire({
+                            title: "<h4>INVALID CREDENTIAL</h4>",
+                            icon: "warning",
+                            showCloseButton: false,
+                            showCancelButton: false,
+                            confirmButtonColor: "#AA0F0A",
+                        }).then((result) => {
+                            if (result.value) {
+                                window.location.href = "/processRequest";
+                            }
+                        });
                         $("#loadingModal").modal("hide");
                         // Handle the error (e.g. show an error message)
                     },

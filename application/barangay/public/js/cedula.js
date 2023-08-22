@@ -1,4 +1,3 @@
-
 var tooltipTriggerList = [].slice.call(
     document.querySelectorAll('[data-bs-toggle="tooltip"]')
 );
@@ -6,6 +5,30 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
 });
 // Example starter JavaScript for disabling form submissions if there are invalid fields
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+    "use strict";
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll(".needs-validation");
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach((form) => {
+        form.addEventListener(
+            "submit",
+            (event) => {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+
+                form.classList.add("was-validated");
+            },
+            false
+        );
+    });
+})();
 
 function isCheck() {
     var checkbox = document.getElementById("agree").checked;
@@ -75,7 +98,7 @@ const form = document.getElementById("yourForm");
 form.addEventListener("submit", function (event) {
     if (!form.checkValidity()) {
         // If the form is not valid, show the validation errors
-        
+
         event.preventDefault();
         return;
     }
@@ -96,19 +119,36 @@ form.addEventListener("submit", function (event) {
         contentType: false,
         success: function (response) {
             // Hide the modal
+            console.log(response);
             $("#loadingModal").modal("hide");
-            Swal.fire({
-                title: "<h4>YOUR REQUEST IS SUCCESSFULY SUBMITTED</h4>",
-                icon: "success",
-                html: response.message,
-                showCloseButton: false,
-                showCancelButton: false,
-                confirmButtonColor: "#AA0F0A",
-            }).then((result) => {
-                if (result.value) {
-                    window.location.href = "/userDashboard";
-                }
-            });
+            
+            if (response.success) {
+                Swal.fire({
+                    title: "<h4>YOUR REQUEST IS SUCCESSFULLY SUBMITTED</h4>",
+                    icon: "success",
+                    html: response.message,
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    confirmButtonColor: "#AA0F0A",
+                }).then((result) => {
+                    if (result.value) {
+                        window.location.href = "/userDashboard";
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "<h4>CAPTCHA ERROR</h4>",
+                    icon: "error",
+                    html: response.message,
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    confirmButtonColor: "#AA0F0A",
+                }).then((result) => {
+                    if (result.value) {
+                        window.location.href = "/userDashboard";
+                    }
+                });
+            }
         },
         error: function (error) {
             // Hide the modal

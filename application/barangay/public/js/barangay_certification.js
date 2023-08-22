@@ -150,7 +150,7 @@ const form = document.getElementById("yourForm");
 form.addEventListener("submit", function (event) {
     if (!form.checkValidity()) {
         // If the form is not valid, show the validation errors
-        
+
         event.preventDefault();
         return;
     }
@@ -172,18 +172,33 @@ form.addEventListener("submit", function (event) {
         success: function (response) {
             // Hide the modal
             $("#loadingModal").modal("hide");
-            Swal.fire({
-                title: "<h4>YOUR REQUEST IS SUCCESSFULY SUBMITTED</h4>",
-                icon: "success",
-                html: response.message,
-                showCloseButton: false,
-                showCancelButton: false,
-                confirmButtonColor: "#AA0F0A",
-            }).then((result) => {
-                if (result.value) {
-                    window.location.href = "/userDashboard";
-                }
-            });
+            if (response.success) {
+                Swal.fire({
+                    title: "<h4>YOUR REQUEST IS SUCCESSFULLY SUBMITTED</h4>",
+                    icon: "success",
+                    html: response.message,
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    confirmButtonColor: "#AA0F0A",
+                }).then((result) => {
+                    if (result.value) {
+                        window.location.href = "/userDashboard";
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "<h4>CAPTCHA ERROR</h4>",
+                    icon: "error",
+                    html: response.message,
+                    showCloseButton: false,
+                    showCancelButton: false,
+                    confirmButtonColor: "#AA0F0A",
+                }).then((result) => {
+                    if (result.value) {
+                        window.location.href = "/userDashboard";
+                    }
+                });
+            }
         },
         error: function (error) {
             // Hide the modal
@@ -193,4 +208,3 @@ form.addEventListener("submit", function (event) {
         },
     });
 });
-

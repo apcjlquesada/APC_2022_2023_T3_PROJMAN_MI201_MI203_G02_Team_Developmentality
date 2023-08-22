@@ -19,7 +19,8 @@
             display: none;
         }
     </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
 
 </head>
 
@@ -83,27 +84,33 @@
                             <p class="fs-6  mb-0">Gender: </p><strong>{{strtoupper($user->gender)}}</strong>
                         </div>
                         <div class="col-md-3 mb-2">
-                            <p class="fs-6  mb-0">Date of Birth: </p><strong>{{date('F j, Y', strtotime($user->birthdate))}}</strong>
+                            <p class="fs-6  mb-0">Date of Birth: </p>
+                            <strong>{{date('F j, Y', strtotime($user->birthdate))}}</strong>
                         </div>
                         <div class="col-md-3 mb-2">
-                            <p class="fs-6  mb-0">Place of Birth: </p><strong>{{strtoupper($user->place_birth)}}</strong>
+                            <p class="fs-6  mb-0">Place of Birth: </p>
+                            <strong>{{strtoupper($user->place_birth)}}</strong>
                         </div>
                         <div class="col-md-3 mb-2">
-                            <p class="fs-6  mb-0">Civil Status: </p><strong>{{strtoupper($user->marital_status)}}</strong>
+                            <p class="fs-6  mb-0">Civil Status: </p>
+                            <strong>{{strtoupper($user->marital_status)}}</strong>
                         </div>
                     </div>
                     <div class="row my-3 text-center">
                         <div class="col-md-3 mb-2">
-                            <p class="fs-6  mb-0">Room/Flr/Unit No. & Bldg: </p><strong>{{strtoupper($user->address_unitNo)}}</strong>
+                            <p class="fs-6  mb-0">Room/Flr/Unit No. & Bldg: </p>
+                            <strong>{{strtoupper($user->address_unitNo)}}</strong>
                         </div>
                         <div class="col-md-3 mb-2">
-                            <p class="fs-6  mb-0">House/Lot & Block No.: </p><strong>{{strtoupper($user->address_houseNo)}}</strong>
+                            <p class="fs-6  mb-0">House/Lot & Block No.: </p>
+                            <strong>{{strtoupper($user->address_houseNo)}}</strong>
                         </div>
                         <div class="col-md-3 mb-2">
                             <p class="fs-6  mb-0">Street: </p><strong>{{strtoupper($user->address_street)}}</strong>
                         </div>
                         <div class="col-md-3 mb-2">
-                            <p class="fs-6  mb-0">Subd./ Phase/ Purok: </p><strong>{{strtoupper($user->address_purok)}}</strong>
+                            <p class="fs-6  mb-0">Subd./ Phase/ Purok: </p>
+                            <strong>{{strtoupper($user->address_purok)}}</strong>
                         </div>
                     </div>
                     <div class="row my-3 text-center">
@@ -111,14 +118,17 @@
                             <p class="fs-6  mb-0">Email: </p><strong>{{$user->email}}</strong>
                         </div>
                         <div class="col-md-3 mb-2">
-                            <p class="fs-6  mb-0">Mobile Number: </p><strong>+63 {{strtoupper($user->mobile_num)}}</strong>
+                            <p class="fs-6  mb-0">Mobile Number: </p><strong>+63
+                                {{strtoupper($user->mobile_num)}}</strong>
                         </div>
 
                         <div class="col-md-3 mb-2">
-                            <p class="fs-6  mb-0">Valid ID (attached online): </p><strong>{{$user->valiID_type}}</strong>
+                            <p class="fs-6  mb-0">Valid ID (attached online): </p>
+                            <strong>{{$user->valiID_type}}</strong>
                         </div>
                         <div class="col-md-3 mb-2">
-                            <p class="fs-6  mb-0">Valid ID Number: </p><strong>{{strtoupper($user->validID_num)}}</strong>
+                            <p class="fs-6  mb-0">Valid ID Number: </p>
+                            <strong>{{strtoupper($user->validID_num)}}</strong>
                         </div>
                     </div>
                     <div class="row my-3 text-center">
@@ -157,7 +167,8 @@
                     <hr>
                     <div class="row my-3 ">
                         <div class="col-md-4 mb-2">
-                            <label class="text-start mb-2" for="">Type of Application<span class="text-danger">*</span> </label>
+                            <label class="text-start mb-2" for="">Type of Application<span class="text-danger">*</span>
+                            </label>
                             <select name="request_description" id="applicationType" class="form-select form-control" aria-label="Default select example" required>
                                 <option value="">Select...</option>
                                 <option value="New">New</option>
@@ -173,7 +184,8 @@
                             <input class="form-control mb-2" value="Based on your income" type="text" readonly />
                             <input type="hidden" value="100" name="price" />
 
-                            <p class="fw-bolder fs-6 fst-italic  text-danger"><i class="bi bi-exclamation-circle"></i> Payment should be done in barangay office.</p>
+                            <p class="fw-bolder fs-6 fst-italic  text-danger"><i class="bi bi-exclamation-circle"></i>
+                                Payment should be done in barangay office.</p>
 
                         </div>
                     </div>
@@ -197,12 +209,19 @@
                 </div>
                 <div class="shadow p-4 mb-3 bg-body rounded text-center">
                     <div class="form-group mb-2">
-                        <nobr> <input onchange="isCheck(this)" type="checkbox" id="agree">&nbsp; <label for="" id="agreeText" style="cursor: pointer;"> I have read,</nobr> <strong>understood</strong>, and <strong>accepted</strong> the
-                        <a href="/policy" target="_blank">Privacy Policy</a> and <a href="/terms" target="_blank">Terms & Conditions.</a></label>
+                        <nobr> <input onchange="isCheck(this)" type="checkbox" id="agree">&nbsp; <label for="" id="agreeText" style="cursor: pointer;"> I have read,</nobr>
+                        <strong>understood</strong>, and <strong>accepted</strong> the
+                        <a href="/policy" target="_blank">Privacy Policy</a> and <a href="/terms" target="_blank">Terms
+                            & Conditions.</a></label>
                         <br>
                     </div>
+                    <div class="text-center">
+                        <div class="d-flex justify-content-center mb-3"> <!-- Center the reCAPTCHA elements -->
+                            {!! NoCaptcha::renderJs() !!}
+                            {!! NoCaptcha::display() !!}
+                        </div>
+                    </div>
                     <button id="btn" type="submit" style="background-color:#AA0F0A; color: white;" class="btn d-block mx-auto " disabled>Request</button>
-
                 </div>
             </div>
             </div>

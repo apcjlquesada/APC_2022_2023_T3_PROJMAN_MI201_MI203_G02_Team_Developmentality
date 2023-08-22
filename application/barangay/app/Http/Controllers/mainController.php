@@ -119,7 +119,10 @@ class mainController extends Controller
     public function addUser(Request $request)
     {
 
-        if (User::where('email', $request->email)->where('isEnabled', 1)->exists()) {
+
+        if (false
+            // User::where('email', $request->email)->where('isEnabled', 1)->exists()
+        ) {
 
             $data = [
                 'success' => true,
@@ -141,28 +144,36 @@ class mainController extends Controller
 
             // Retrieve the uploaded file from the request
             $userFile_front = public_path('residentID\\' . $filename_front);
-            $userFile_back= public_path('residentID\\' . $filename_back);
-            $fileContent_front = file_get_contents( $userFile_front);
-            $fileContent_back = file_get_contents( $userFile_back);
+            $userFile_back = public_path('residentID\\' . $filename_back);
+            $fileContent_front = file_get_contents($userFile_front);
+            $fileContent_back = file_get_contents($userFile_back);
 
-            // // Convert the file content to base64 encoding
-            // $base64FileContent_front = base64_encode($fileContent_front);
-            // $base64FileContent_back = base64_encode($fileContent_back);
 
-            // $post = [
-            //     'file_base64' =>  $base64FileContent_front,
-            //     'file_back_base64' => $base64FileContent_back,
-            //     'apikey' => 'ZEZiRIDNCR8z8zkB6zpTdxdoHjvlUHiD',
-            //     'authenticate' => true
-            // ];
-            // $ch = curl_init();
-            // curl_setopt($ch, CURLOPT_URL, 'https://api.idanalyzer.com');
-            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            // curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
-            // $response = curl_exec($ch);
-            // (dd(curl_exec($ch)));
 
-// ---------------------------------------------------------------------------------------
+            $client = new \GuzzleHttp\Client();
+
+
+
+            // Convert the file content to base64 encoding
+            $base64FileContent_front = base64_encode($fileContent_front);
+            $base64FileContent_back = base64_encode($fileContent_back);
+
+
+            $post = [
+                'file_base64' =>  $base64FileContent_front,
+                'file_back_base64' => $base64FileContent_back,
+                'apikey' => 'ZEZiRIDNCR8z8zkB6zpTdxdoHjvlUHiD',
+                'authenticate' => true
+            ];
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'https://api.idanalyzer.com');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
+            $response = curl_exec($ch);
+
+            dd(curl_exec($ch));
+
+            // ---------------------------------------------------------------------------------------
             // // Initialize Core API US Region with your credentials  
             // $coreapi = new CoreAPI("ZEZiRIDNCR8z8zkB6zpTdxdoHjvlUHiD", "US");
 

@@ -200,6 +200,12 @@
                         <a href="/policy" target="_blank">Privacy Policy</a> and <a href="/terms" target="_blank">Terms & Conditions.</a></label>
                         <br>
                     </div>
+                    <div class="text-center">
+                        <div class="d-flex justify-content-center mb-3"> <!-- Center the reCAPTCHA elements -->
+                            {!! NoCaptcha::renderJs() !!}
+                            {!! NoCaptcha::display() !!}
+                        </div>
+                    </div>
                     <button id="btn" type="submit" style="background-color:#AA0F0A; color: white;" class="btn d-block mx-auto " disabled>Request</button>
 
                 </div>

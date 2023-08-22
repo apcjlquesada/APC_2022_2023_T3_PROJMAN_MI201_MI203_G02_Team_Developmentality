@@ -96,9 +96,6 @@
     </div>
 
 
-
-
-
     <div class="mt-md-1" style="background-color: #AA0F0A;">
       <nav class="mx-3 navbar navbar-expand-lg navbar-light flex-column flex-sm-row">
         <div class="container-fluid my-container-fluid">

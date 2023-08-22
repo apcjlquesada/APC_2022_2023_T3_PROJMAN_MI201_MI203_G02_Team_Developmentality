@@ -651,76 +651,76 @@
     const form = document.getElementById("yourForm");
 
     // Listen for the submit event
-    form.addEventListener("submit", function(event) {
-        if (!form.checkValidity()) {
-            // If the form is not valid, show the validation errors
+    // form.addEventListener("submit", function(event) {
+    //     if (!form.checkValidity()) {
+    //         // If the form is not valid, show the validation errors
 
-            event.preventDefault();
-            return;
-        }
-        event.preventDefault(); // Prevent the form from being submitted normally
+    //         event.preventDefault();
+    //         return;
+    //     }
+    //     event.preventDefault(); // Prevent the form from being submitted normally
 
-        // Show the modal
-        $("#loadingModal").modal("show");
+    //     // Show the modal
+    //     $("#loadingModal").modal("show");
 
-        // Get the form data
-        const formData = new FormData(form);
+    //     // Get the form data
+    //     const formData = new FormData(form);
 
-        // Make the AJAX request
-        $.ajax({
-            type: "POST",
-            url: form.action,
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function(response) {
+    //     // Make the AJAX request
+    //     // $.ajax({
+    //     //     type: "POST",
+    //     //     url: form.action,
+    //     //     data: formData,
+    //     //     processData: false,
+    //     //     contentType: false,
+    //     //     success: function(response) {
 
-                if (response.message == 'error') {
-                    $("#loadingModal").modal("hide");
-                    Swal.fire({
-                        title: "<h4>ACCOUNT CREATION FAILED</h4>",
-                        icon: "error",
-                        text: 'Sorry, this email is already registered. Please try logging in or use a different email to create a new account.',
-                        showCloseButton: false,
-                        showCancelButton: false,
-                        confirmButtonColor: "#AA0F0A",
-                    }).then((result) => {
-                        if (result.value) {
-                            // Clear the email input
-                            $('#email').val('');
-                            $('#password').val('');
-                            $('#confirm_password').val('');
-                            // Focus back on the email input
-                            $('#email').focus();
-                            //window.location.href = "/registration";
-                        }
-                    });
-                } else {
-                    // Hide the modal
-                    $("#loadingModal").modal("hide");
-                    Swal.fire({
-                        title: "<h4>ACCOUNT SUCCESSFULLY CREATED</h4>",
-                        icon: "success",
-                        text: 'You have successfully created your profile account. Please check your email to verify your account.',
-                        showCloseButton: false,
-                        showCancelButton: false,
-                        confirmButtonColor: "#AA0F0A",
-                    }).then((result) => {
-                        if (result.value) {
-                            window.location.href = "/login";
-                        }
-                    });
-                }
+    //     //         if (response.message == 'error') {
+    //     //             $("#loadingModal").modal("hide");
+    //     //             Swal.fire({
+    //     //                 title: "<h4>ACCOUNT CREATION FAILED</h4>",
+    //     //                 icon: "error",
+    //     //                 text: 'Sorry, this email is already registered. Please try logging in or use a different email to create a new account.',
+    //     //                 showCloseButton: false,
+    //     //                 showCancelButton: false,
+    //     //                 confirmButtonColor: "#AA0F0A",
+    //     //             }).then((result) => {
+    //     //                 if (result.value) {
+    //     //                     // Clear the email input
+    //     //                     $('#email').val('');
+    //     //                     $('#password').val('');
+    //     //                     $('#confirm_password').val('');
+    //     //                     // Focus back on the email input
+    //     //                     $('#email').focus();
+    //     //                     //window.location.href = "/registration";
+    //     //                 }
+    //     //             });
+    //     //         } else {
+    //     //             // Hide the modal
+    //     //             $("#loadingModal").modal("hide");
+    //     //             Swal.fire({
+    //     //                 title: "<h4>ACCOUNT SUCCESSFULLY CREATED</h4>",
+    //     //                 icon: "success",
+    //     //                 text: 'You have successfully created your profile account. Please check your email to verify your account.',
+    //     //                 showCloseButton: false,
+    //     //                 showCancelButton: false,
+    //     //                 confirmButtonColor: "#AA0F0A",
+    //     //             }).then((result) => {
+    //     //                 if (result.value) {
+    //     //                     window.location.href = "/login";
+    //     //                 }
+    //     //             });
+    //     //         }
 
-            },
-            error: function(error) {
-                // Hide the modal
-                $("#loadingModal").modal("hide");
+    //     //     },
+    //     //     error: function(error) {
+    //     //         // Hide the modal
+    //     //         $("#loadingModal").modal("hide");
 
-                // Handle the error (e.g. show an error message)
-            },
-        });
-    });
+    //     //         // Handle the error (e.g. show an error message)
+    //     //     },
+    //     // });
+    // });
 </script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>

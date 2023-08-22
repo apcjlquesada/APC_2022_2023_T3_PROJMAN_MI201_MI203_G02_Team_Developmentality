@@ -11,7 +11,7 @@ use App\Models\Request_History;
 use Illuminate\Support\Facades\Auth;
 use PHPMailer\PHPMailer\PHPMailer;
 use \ConvertApi\ConvertApi;
-
+use Illuminate\Support\Facades\Validator;
 
 
 class RequestController extends Controller
@@ -19,6 +19,29 @@ class RequestController extends Controller
 
     public function submit_request(Request $request)
     {
+
+        $validateUser = Validator::make(
+            $request->all(),
+            [
+                'g-recaptcha-response' => 'required|captcha',
+            ]
+        );
+
+        if ($validateUser->fails()) {
+
+            // return response()->json([
+            //     'status' => false,
+            //     'message' => 'validation error',
+            //     'errors' => $validateUser->errors()
+            // ], 401);
+
+            $data = [
+                'success' => false,
+                'message' => "Please verify that you are not a robot.",
+            ];
+
+            return response()->json($data);
+        }
 
         //email to
         $emailSendTo = User::where('id', $request->resident_id)->first();
@@ -146,6 +169,28 @@ class RequestController extends Controller
     }
     public function submit_business_request(Request $request)
     {
+        $validateUser = Validator::make(
+            $request->all(),
+            [
+                'g-recaptcha-response' => 'required|captcha',
+            ]
+        );
+
+        if ($validateUser->fails()) {
+
+            // return response()->json([
+            //     'status' => false,
+            //     'message' => 'validation error',
+            //     'errors' => $validateUser->errors()
+            // ], 401);
+
+            $data = [
+                'success' => false,
+                'message' => "Please verify that you are not a robot.",
+            ];
+
+            return response()->json($data);
+        }
 
         //email to
         $emailSendTo = User::where('id', $request->resident_id)->first();
@@ -227,7 +272,7 @@ class RequestController extends Controller
         } else {
             if ($request->file('file')) {
                 $file_front = $request->file('file');
-                $filename = $request->resident_id . '_' . $reference_key . ".".$file_front->getClientOriginalExtension();
+                $filename = $request->resident_id . '_' . $reference_key . "." . $file_front->getClientOriginalExtension();
                 $file_front->move(public_path('/images'), $filename);
             } else {
                 $filename = "";
@@ -372,6 +417,10 @@ class RequestController extends Controller
 
     public function acceptrequest(Request $request)
     {
+
+
+
+
         $password_correct = password_verify($request->password, Auth::user()->password);
         if ($password_correct) {
             $transactions = Requests::join('users', 'users.id', '=', 'requests.resident_id')
@@ -384,11 +433,12 @@ class RequestController extends Controller
                 return date("M. d, Y", strtotime($date));
             }, $dateArray);
             $formattedDateString = implode(" - ", $formattedDates);
-
+            $secondDate = date("Y-m-d", strtotime($dateArray[1]));
             Requests::where('request_id', $request->id)->update([
                 'request_status' => 'READY FOR PAYMENT',
                 'request_message' => $request->reason,
-                'date_claim' => $formattedDateString
+                'range_date_claim' => $formattedDateString,
+                'expiration' =>    $secondDate
             ]);
             Request_History::create([
                 'request_id' => $request->id,
@@ -542,7 +592,7 @@ class RequestController extends Controller
                 $template->setValue('or', $request->or);
                 $template->setValue('ctc', $request->ctc);
                 $template->setValue('issue_on', $request->issue_on);
-                $template->setValue('expiration', date('Y-m-d', strtotime($request->issue_on. ' +1 year')));
+                $template->setValue('expiration', date('Y-m-d', strtotime($request->issue_on . ' +1 year')));
 
                 $file_directory = "wordsDocsFormat\'" . $transactions->reference_key . ".docx";
                 $template->saveAs(public_path($file_directory));
@@ -645,7 +695,7 @@ class RequestController extends Controller
                 if (!$mail->send()) {
                     alert('error');
                 }
-            } 
+            }
             // for barangay ID and CEDULA
             else if ($transactions->request_type_id == 1 || $transactions->request_type_id == 2) {
                 Requests::where('request_id', $request->id)->update([
@@ -729,7 +779,7 @@ class RequestController extends Controller
                 if (!$mail->send()) {
                     alert('error');
                 }
-            } 
+            }
             // for business clearance
             else if ($transactions->request_type_id == 5) {
                 // Load the Word document as a template
@@ -750,7 +800,7 @@ class RequestController extends Controller
                 // Replace variables with values
                 $template->setValue('name', ucwords(strtolower($transactions->first_name) . " " . strtolower($transactions->middle_name) . " " . strtolower($transactions->last_name)));
                 $template->setValue('address', ucwords(strtolower($transactions->address_unitNo)) . ' ' . ucwords(strtolower($transactions->address_houseNo)) . ' ' . ucwords(strtolower($transactions->address_street)) . ' ' . ucwords(strtolower($transactions->address_purok)) . ' Barangay South Signal Village Taguig City');
-                $template->setValue('purpose', "BUSINESS CLEARANCE for ".$transactions->request_description);
+                $template->setValue('purpose', "BUSINESS CLEARANCE for " . $transactions->request_description);
                 $template->setValue('business_name', strtoupper($transactions->business_name));
                 $template->setValue('business_address', ucwords(strtolower($transactions->business_address)));
                 $template->setValue('employee_name', ucwords(strtolower($transactions->employee_name)));
@@ -761,7 +811,7 @@ class RequestController extends Controller
                 $template->setValue('day', $day);
                 $template->setValue('month', $month);
                 $template->setValue('year', $year);
-                $template->setValue('expiration', date('Y-m-d', strtotime($request->issue_on. ' +1 year')));
+                $template->setValue('expiration', date('Y-m-d', strtotime($request->issue_on . ' +1 year')));
 
                 $file_directory = "wordsDocsFormat\'" . $transactions->reference_key . ".docx";
                 $template->saveAs(public_path($file_directory));

@@ -114,6 +114,12 @@
                         <a href="" target="_blank">Privacy Policy</a> and <a href="" target="_blank">Terms & Conditions.</a></label>
                         <br>
                     </div>
+                    <div class="text-center">
+                        <div class="d-flex justify-content-center mb-3"> <!-- Center the reCAPTCHA elements -->
+                            {!! NoCaptcha::renderJs() !!}
+                            {!! NoCaptcha::display() !!}
+                        </div>
+                    </div>
                     <button id="btn" type="submit" style="background-color:#AA0F0A; color: white;" class="btn d-block mx-auto " disabled>Request</button>
                 </div>
             </div>
@@ -174,18 +180,46 @@
                 success: function(response) {
                     // Hide the modal
                     $("#loadingModal").modal("hide");
-                    Swal.fire({
-                        title: "<h4>YOUR CONCERN IS SUCCESSFULY SUBMITTED</h4>",
-                        icon: "success",
-                        html: response.message,
-                        showCloseButton: false,
-                        showCancelButton: false,
-                        confirmButtonColor: "#AA0F0A",
-                    }).then((result) => {
-                        if (result.value) {
-                            window.location.href = "/userDashboard";
-                        }
-                    });
+                    //     Swal.fire({
+                    //         title: "<h4>YOUR CONCERN IS SUCCESSFULY SUBMITTED</h4>",
+                    //         icon: "success",
+                    //         html: response.message,
+                    //         showCloseButton: false,
+                    //         showCancelButton: false,
+                    //         confirmButtonColor: "#AA0F0A",
+                    //     }).then((result) => {
+                    //         if (result.value) {
+                    //             window.location.href = "/userDashboard";
+                    //         }
+                    //     });
+                    // },
+                    if (response.success) {
+                        Swal.fire({
+                            title: "<h4>YOUR CONCERN IS SUCCESSFULY SUBMITTED</h4>",
+                            icon: "success",
+                            html: response.message,
+                            showCloseButton: false,
+                            showCancelButton: false,
+                            confirmButtonColor: "#AA0F0A",
+                        }).then((result) => {
+                            if (result.value) {
+                                window.location.href = "/userDashboard";
+                            }
+                        });
+                    } else {
+                        Swal.fire({
+                            title: "<h4>CAPTCHA ERROR</h4>",
+                            icon: "error",
+                            html: response.message,
+                            showCloseButton: false,
+                            showCancelButton: false,
+                            confirmButtonColor: "#AA0F0A",
+                        }).then((result) => {
+                            if (result.value) {
+                                window.location.href = "/userDashboard";
+                            }
+                        });
+                    }
                 },
                 error: function(error) {
                     // Hide the modal

@@ -25,7 +25,7 @@ class adminController extends Controller
 
     public function deact_admin(Request $request)
     {
-        $user_status =  DB::table('users')->where('id',$request->id)->first();
+        $user_status =  DB::table('users')->where('id', $request->id)->first();
 
         if ($user_status->isEnabled ==  0) {
             User::where('id', $request->id)->update(['isEnabled' => 1]);
@@ -36,7 +36,7 @@ class adminController extends Controller
         }
 
         // $user = Auth::user();
-        
+
         // $admin_info = DB::table('users')->where('id', $user->id)->get();
 
         // $list_info = DB::table('users')
@@ -168,14 +168,14 @@ class adminController extends Controller
         }
 
         $requests = DB::table('requests')
-        ->select('employee_name', DB::raw('((SUM(CASE WHEN request_status = "DONE" THEN 1 ELSE 0 END) + SUM(CASE WHEN request_status = "DENIED" THEN 1 ELSE 0 END) )/COUNT(*))*100 AS computation'))
-        ->groupBy('employee_name')
-        ->get();
+            ->select('employee_name', DB::raw('((SUM(CASE WHEN request_status = "DONE" THEN 1 ELSE 0 END) + SUM(CASE WHEN request_status = "DENIED" THEN 1 ELSE 0 END) )/COUNT(*))*100 AS computation'))
+            ->groupBy('employee_name')
+            ->get();
 
         $concerns = DB::table('concern')
-        ->select('concern_processed_by', DB::raw('((SUM(CASE WHEN concern_status = "DONE" THEN 1 ELSE 0 END) + SUM(CASE WHEN concern_status = "DENIED" THEN 1 ELSE 0 END) )/COUNT(*))*100 AS computation'))
-        ->groupBy('concern_processed_by')
-        ->get();
+            ->select('concern_processed_by', DB::raw('((SUM(CASE WHEN concern_status = "DONE" THEN 1 ELSE 0 END) + SUM(CASE WHEN concern_status = "DENIED" THEN 1 ELSE 0 END) )/COUNT(*))*100 AS computation'))
+            ->groupBy('concern_processed_by')
+            ->get();
 
         return view('admin/dash_employee', [
             'requests' => $requests,
@@ -960,7 +960,8 @@ class adminController extends Controller
                 $request->all(),
                 [
                     'email' => 'required|email',
-                    'password' => 'required'
+                    'password' => 'required',
+                    'g-recaptcha-response' => 'required|captcha',
                 ]
             );
 
@@ -971,6 +972,13 @@ class adminController extends Controller
                     'message' => 'validation error',
                     'errors' => $validateUser->errors()
                 ], 401);
+
+                alert()->image('ReCAPTCHA Verification Required', 'Please complete the ReCAPTCHA verification to proceed.', 'https://www.google.com/recaptcha/intro/images/hero-recaptcha-invisible.gif', '120x', '120px', 'Image Alt')->showConfirmButton('Confirm', '#AA0F0A');
+
+                // alert()->error('Captcha Error','Please verify that you are not a robot.')->showConfirmButton('Confirm', '#AA0F0A');
+
+                // toast('Please verify that you are not a robot.','error');
+                return redirect()->route('adminPortal');
             }
 
             if (!Auth::attempt($request->only(['email', 'password']))) {
@@ -1104,7 +1112,7 @@ class adminController extends Controller
         }
 
         // $user = Auth::user();
-        
+
         // $admin_info = DB::table('users')->where('id', $user->id)->get();
 
         // $list_info = DB::table('users')

@@ -9,11 +9,37 @@ use App\Models\Concern_History;
 use Illuminate\Support\Facades\Auth;
 use PHPMailer\PHPMailer\PHPMailer;
 use \ConvertApi\ConvertApi;
+use Illuminate\Support\Facades\Validator;
+
 
 class Concern extends Controller
 {
     public function submit_concern(Request $request)
     {
+
+        $validateUser = Validator::make(
+            $request->all(),
+            [
+                'g-recaptcha-response' => 'required|captcha',
+            ]
+        );
+
+        if ($validateUser->fails()) {
+
+            // return response()->json([
+            //     'status' => false,
+            //     'message' => 'validation error',
+            //     'errors' => $validateUser->errors()
+            // ], 401);
+
+            $data = [
+                'success' => false,
+                'message' => "Please verify that you are not a robot.",
+            ];
+
+            return response()->json($data);
+
+        }
 
         if ($request->file('file')) {
             $file_front = $request->file('file');

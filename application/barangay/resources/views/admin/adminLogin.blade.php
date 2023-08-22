@@ -30,7 +30,7 @@
                             <form form method="post" enctype="multipart/form-data" action="{{url('loginAdmin')}}" class="needs-validation" novalidate>
                                 @csrf
                                 <div class="mb-3">
-                                    <label class="mb-2 text-muted" for="email">E-Mail Address</label>
+                                    <label class="mb-2 text-muted" for="email">E-mail Address</label>
                                     <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
                                 </div>
                                 <div class="mb-3">
@@ -40,6 +40,12 @@
                                     <input id="password" type="password" class="form-control" name="password" required>
                                     <div class="invalid-feedback">
                                         Password is required
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="d-flex justify-content-center mb-3"> <!-- Center the reCAPTCHA elements -->
+                                        {!! NoCaptcha::renderJs() !!}
+                                        {!! NoCaptcha::display() !!}
                                     </div>
                                 </div>
                                 <div class="d-grid gap-2 mb-3">

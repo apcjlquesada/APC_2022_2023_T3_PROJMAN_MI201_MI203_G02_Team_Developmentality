@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Resident Dashboard</title>
-  <link rel="icon" href="{{asset('assets/imgs/southsignalLogoLeft.png')}}" type="image/png">
+    <link rel="icon" href="{{asset('assets/imgs/southsignalLogoLeft.png')}}" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <title>User Dashboard</title>
@@ -47,7 +47,7 @@
 
     <body>
         @foreach($user_info as $user)
-        <form  id="yourForm" method="post" enctype="multipart/form-data" action="{{url('submit-business-request')}}" class="needs-validation" novalidate>
+        <form id="yourForm" method="post" enctype="multipart/form-data" action="{{url('submit-business-request')}}" class="needs-validation" novalidate>
             @csrf
             <input type="hidden" name="resident_id" value="{{$user->id}}">
             <input type="hidden" name="request_type_id" value="5">
@@ -192,6 +192,12 @@
                         <a href="" target="_blank">Privacy Policy</a> and <a href="" target="_blank">Terms & Conditions.</a></label>
                         <br>
                     </div>
+                    <div class="text-center">
+                        <div class="d-flex justify-content-center mb-3"> <!-- Center the reCAPTCHA elements -->
+                            {!! NoCaptcha::renderJs() !!}
+                            {!! NoCaptcha::display() !!}
+                        </div>
+                    </div>
                     <button id="btn" type="submit" style="background-color:#AA0F0A; color: white;" class="btn d-block mx-auto " disabled>Request</button>
                 </div>
 
@@ -204,22 +210,22 @@
             @endforeach
         </form>
     </body>
-            <!-- Modal -->
-            <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-hidden="true"  data-bs-backdrop="static" data-bs-keyboard="false">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content ">
-                    <div class="modal-body text-center my-3">
-                        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
-                        </div>
-                        <p class="mt-3">Please wait...</p>
+    <!-- Modal -->
+    <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content ">
+                <div class="modal-body text-center my-3">
+                    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
                     </div>
+                    <p class="mt-3">Please wait...</p>
                 </div>
             </div>
         </div>
+    </div>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{asset('js/business_clearance.js')}}"></script>
     <script>
-        
+
     </script>
 
 </html>
