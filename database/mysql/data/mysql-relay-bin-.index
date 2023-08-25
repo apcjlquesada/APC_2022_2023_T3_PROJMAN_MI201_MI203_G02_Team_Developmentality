@@ -1,0 +1,191 @@
+e '.\mysql-relay-bin.000012'
+sql-relay-bin-.000012
+.\mysql-relay-bin-.000013
+2023-01-04  5:33:28 7 [Note] Initialized Master_info from 'master-.info'
+2023-01-04  5:33:28 7 [Note] Added new Master_info 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ' to hash table
+2023-01-04  5:33:28 10 [Note] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': Slave I/O thread: Start asynchronous replication to master '@:3306' in log '' at position 4
+2023-01-04  5:33:28 7 [Note] Started replication for 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ'
+2023-01-04  5:33:28 11 [Note] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': Slave SQL thread initialized, starting replication in log 'FIRST' at position 0, relay log '.\mysql-relay-bin-.000010' position: 4
+2023-01-04  5:33:28 10 [ERROR] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': Slave I/O: Fatal error: Invalid (empty) username when attempting to connect to the master server. Connection attempt terminated. Internal MariaDB error code: 1593
+2023-01-04  5:33:28 7 [Note] Reading Master_info: 'master.info'  Relay_info:'relay-log.info'
+2023-01-04  5:33:28 10 [Note] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': Slave I/O thread killed while connecting to master
+2023-01-04  5:33:28 10 [Note] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': Slave I/O thread exiting, read up to log 'FIRST', position 4
+2023-01-04  5:33:28 10 [Note] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': master was :3306
+2023-01-04  5:33:28 9 [Note] Failed to execute mysql2023-01-04  5:33:28 11 [ERROR] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': next log error: -1  offset: 52  log: .\mysql-relay-bin-.000011 included: 1
+2023-01-04  5:33:28 11 [ERROR] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': Failed to open log (file '2023-01-04  5:33:28 10 [Note] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': master was :3306', errno 13)
+2023-01-04  5:33:28 11 [ERROR] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': Error reading relay log event: Could not open log file
+2023-01-04  5:33:28 11 [ERROR] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': Slave SQL: Relay log read failure: Could not parse relay log event entry. The possible reasons are: the master's binary log is corrupted (you can check this by running 'mysqlbinlog' on the binary log), the slave's relay log is corrupted (you can check this by running 'mysqlbinlog' on the relay log), a network problem, or a bug in the master's or slave's MySQL code. If you want to check the master's binary log or slave's relay log, you will be able to know their names by issuing 'SHOW SLAVE STATUS' on this slave. Internal MariaDB error code: 1594
+2023-01-04  5:33:28 11 [ERROR] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': Slave (additional info): File '2023-01-04  5:33:28 10 [Note] Master '' not found (Errcode: 13 "Permission denied") Error_code: 29
+2023-01-04  5:33:28 11 [Warning] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': Slave: File '2023-01-04  5:33:28 10 [Note] Master '' not found (Errcode: 13 "Permission denied") Error_code: 29
+2023-01-04  5:33:28 11 [ERROR] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': Error running query, slave SQL thread aborted. Fix the problem, and restart the slave SQL thread with "SLAVE START". We stopped at log 'FIRST' position 0
+2023-01-04  5:33:28 11 [Note] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': Slave SQL thread exiting, replication stopped in log 'FIRST' at position 0
+2023-01-04  5:33:28 11 [Note] Master 'ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ': master was :3306
+2023-01-04  5:33:28 7 [Note] Initialized Master_info from 'master.info'
+2023-01-04  5:33:28 7 [ERROR] Connection '' conflicts with existing connection ''
+2023-01-04  5:33:28 7 [Note] Reading Master_info: 'master.info'  Relay_info:'relay-log.info'
+2023-01-04  5:33:28 7 [Note] Initialized Master_info from 'master.info'
+2023-01-04  5:33:28 7 [ERROR] Connection '' conflicts with existing connection ''
+2023-01-04  5:33:28 7 [Note] Reading Master_info: 'master-.info'  Relay_info:'relay-log-.info'
+2023-01-04  5:33:28 7 [ERROR] Failed to open the relay log '.\mysql-relay-bin-.000011' (relay_log_pos 4)
+2023-01-04  5:33:28 7 [ERROR] Could not find target log during relay log initialization
+2023-01-04  5:33:28 7 [ERROR] Initialized Master_info from 'master-.info' failed
+2023-01-04  5:33:28 7 [Note] Added new Master_info '²ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ' to hash table
+2023-01-04  5:33:28 7 [Note] Reading Master_info: 'master-.info'  Relay_info:'relay-log-.info'
+2023-01-04  5:33:28 7 [ERROR] Failed to open the relay log '.\mysql-relay-bin-.000011' (relay_log_pos 4)
+2023-01-04  5:33:28 7 [ERROR] Could not find target log during relay log initialization
+2023-01-04  5:33:28 7 [ERROR] Initialized Master_info from 'master-.info' failed
+2023-01-04  5:33:28 7 [ERROR] Connection '²ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ' conflicts with existing connection '²ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ'
+2023-01-04  5:33:28 0 [Warning] Reading of some Master_info entries failed
+2023-01-04  5:33:28 0 [ERROR] Failed to initialize multi master structures
+2023-01-04  5:33:28 0 [ERROR] Aborting
+.\mysql-relay-bin-.000016
+.\mysql-relay-bin-.000017
+.\mysql-relay-bin-.000018
+.\mysql-relay-bin-.000019
+.\mysql-relay-bin-.000020
+.\mysql-relay-bin-.000021
+.\mysql-relay-bin-.000022
+.\mysql-relay-bin-.000023
+.\mysql-relay-bin-.000024
+.\mysql-relay-bin-.000025
+.\mysql-relay-bin-.000026
+.\mysql-relay-bin-.000027
+.\mysql-relay-bin-.000028
+.\mysql-relay-bin-.000029
+.\mysql-relay-bin-.000030
+.\mysql-relay-bin-.000031
+.\mysql-relay-bin-.000032
+.\mysql-relay-bin-.000033
+.\mysql-relay-bin-.000034
+.\mysql-relay-bin-.000035
+.\mysql-relay-bin-.000036
+.\mysql-relay-bin-.000037
+.\mysql-relay-bin-.000038
+.\mysql-relay-bin-.000039
+.\mysql-relay-bin-.000040
+.\mysql-relay-bin-.000041
+.\mysql-relay-bin-.000042
+.\mysql-relay-bin-.000043
+.\mysql-relay-bin-.000044
+.\mysql-relay-bin-.000045
+.\mysql-relay-bin-.000046
+.\mysql-relay-bin-.000047
+.\mysql-relay-bin-.000048
+.\mysql-relay-bin-.000049
+.\mysql-relay-bin-.000050
+.\mysql-relay-bin-.000051
+.\mysql-relay-bin-.000052
+.\mysql-relay-bin-.000053
+.\mysql-relay-bin-.000054
+.\mysql-relay-bin-.000055
+.\mysql-relay-bin-.000056
+.\mysql-relay-bin-.000057
+.\mysql-relay-bin-.000058
+.\mysql-relay-bin-.000059
+.\mysql-relay-bin-.000060
+.\mysql-relay-bin-.000061
+.\mysql-relay-bin-.000062
+.\mysql-relay-bin-.000063
+.\mysql-relay-bin-.000064
+.\mysql-relay-bin-.000065
+.\mysql-relay-bin-.000066
+.\mysql-relay-bin-.000067
+.\mysql-relay-bin-.000068
+.\mysql-relay-bin-.000069
+.\mysql-relay-bin-.000070
+.\mysql-relay-bin-.000071
+.\mysql-relay-bin-.000072
+.\mysql-relay-bin-.000073
+.\mysql-relay-bin-.000074
+.\mysql-relay-bin-.000075
+.\mysql-relay-bin-.000076
+.\mysql-relay-bin-.000077
+.\mysql-relay-bin-.000078
+.\mysql-relay-bin-.000079
+.\mysql-relay-bin-.000080
+.\mysql-relay-bin-.000081
+.\mysql-relay-bin-.000082
+.\mysql-relay-bin-.000083
+.\mysql-relay-bin-.000084
+.\mysql-relay-bin-.000085
+.\mysql-relay-bin-.000086
+.\mysql-relay-bin-.000087
+.\mysql-relay-bin-.000088
+.\mysql-relay-bin-.000089
+.\mysql-relay-bin-.000090
+.\mysql-relay-bin-.000091
+.\mysql-relay-bin-.000092
+.\mysql-relay-bin-.000093
+.\mysql-relay-bin-.000094
+.\mysql-relay-bin-.000095
+.\mysql-relay-bin-.000096
+.\mysql-relay-bin-.000097
+.\mysql-relay-bin-.000098
+.\mysql-relay-bin-.000099
+.\mysql-relay-bin-.000100
+.\mysql-relay-bin-.000101
+.\mysql-relay-bin-.000102
+.\mysql-relay-bin-.000103
+.\mysql-relay-bin-.000104
+.\mysql-relay-bin-.000105
+.\mysql-relay-bin-.000106
+.\mysql-relay-bin-.000107
+.\mysql-relay-bin-.000108
+.\mysql-relay-bin-.000109
+.\mysql-relay-bin-.000110
+.\mysql-relay-bin-.000111
+.\mysql-relay-bin-.000112
+.\mysql-relay-bin-.000113
+.\mysql-relay-bin-.000114
+.\mysql-relay-bin-.000115
+.\mysql-relay-bin-.000116
+.\mysql-relay-bin-.000117
+.\mysql-relay-bin-.000118
+.\mysql-relay-bin-.000119
+.\mysql-relay-bin-.000120
+.\mysql-relay-bin-.000121
+.\mysql-relay-bin-.000122
+.\mysql-relay-bin-.000123
+.\mysql-relay-bin-.000124
+.\mysql-relay-bin-.000125
+.\mysql-relay-bin-.000126
+.\mysql-relay-bin-.000127
+.\mysql-relay-bin-.000128
+.\mysql-relay-bin-.000129
+.\mysql-relay-bin-.000130
+.\mysql-relay-bin-.000131
+.\mysql-relay-bin-.000132
+.\mysql-relay-bin-.000133
+.\mysql-relay-bin-.000134
+.\mysql-relay-bin-.000135
+.\mysql-relay-bin-.000136
+.\mysql-relay-bin-.000137
+.\mysql-relay-bin-.000138
+2023-01-04  5:39:32 7 [ERROR] Failed to open the relay log '.\mysql-relay-bin-.000011' (relay_log_pos 4)
+2023-01-04  5:39:32 7 [ERROR] Could not find target log during relay log initialization
+.\mysql-relay-bin-.000139
+.\mysql-relay-bin-.000140
+.\mysql-relay-bin-.000141
+.\mysql-relay-bin-.000142
+.\mysql-relay-bin-.000143
+.\mysql-relay-bin-.000144
+.\mysql-relay-bin-.000145
+.\mysql-relay-bin-.000146
+.\mysql-relay-bin-.000147
+.\mysql-relay-bin-.000148
+.\mysql-relay-bin-.000149
+.\mysql-relay-bin-.000150
+.\mysql-relay-bin-.000151
+.\mysql-relay-bin-.000152
+.\mysql-relay-bin-.000153
+.\mysql-relay-bin-.000154
+.\mysql-relay-bin-.000155
+.\mysql-relay-bin-.000156
+.\mysql-relay-bin-.000157
+.\mysql-relay-bin-.000158
+.\mysql-relay-bin-.000159
+.\mysql-relay-bin-.000160
+.\mysql-relay-bin-.000161
+.\mysql-relay-bin-.000162
+.\mysql-relay-bin-.000163
+.\mysql-relay-bin-.000164
